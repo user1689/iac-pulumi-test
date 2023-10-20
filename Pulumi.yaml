@@ -1,0 +1,6 @@
+name: iac-pulumi-test
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: A minimal AWS Python Pulumi program
