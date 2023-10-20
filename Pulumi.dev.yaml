@@ -1,2 +1,36 @@
 config:
+  aws:profile: dev
   aws:region: us-west-2
+  iac-pulumi:data:
+    active: true
+    internet_gateway_name: csye6225-igw
+    num_subnets_for_each: 3
+    default_route: "0.0.0.0/0"
+    private_subnet_name: private-subnet-
+    private_subnets_route_table_association: csye6255-private-rt-association-
+    private_subnets_route_table_name: csye6255-private-route-table
+    public_subnet_name: public-subnet-
+    public_subnets_route_table_association: csye6255-public-rt-association-
+    public_subnets_route_table_name: csye6225-public-route-table
+    subnet_mask: "24"
+    vpc_cidr: "10.0.0.0/16"
+    vpc_name: csye6225-vpc
+    ec2_owner_account_id: "093172792111" # if a number has leading zero, read it as string
+    security_group_name: csye6225-security-group
+    ssh_key_name: ssh-key
+    aws_key_name: aws-key
+    latest_ami_name: csye6225-latest-ami
+    ec2_instance_name: csye6225-ec2
+    ec2_instance_type: t2.micro
+    ec2_instance_root_volume_size: 25
+    ec2_instance_root_volume_type: gp2
+    key_name: csye6225-key
+    key_algo: RSA
+    rsa_bits: 4096
+  tags:name:
+      vpc: csye6225-vpc
+      internet_gateway: csye6225-igw
+      public_route_table: csye6225-public-route-table
+      private_route_table: csye6225-private-route-table
+      public_subnet: csye6225-private-subnet-
+      private_subnet: csye6225-private-subnet-
